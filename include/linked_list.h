@@ -11,7 +11,7 @@ typedef struct ll_node
 } ll_node;
 
 void append_linked_list(ll_node **list, unsigned int val);
-int is_in_linked_list(ll_node *list, unsigned int val);
+int is_in_linked_list(const ll_node *list, unsigned int val);
 void free_linked_list(ll_node **list);
-void print_linked_list(ll_node *list);
+void print_linked_list(const ll_node *list);
 #endif

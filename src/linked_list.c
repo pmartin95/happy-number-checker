@@ -5,6 +5,10 @@ void append_linked_list(ll_node **list, unsigned int val)
     if (*list == NULL)
     {
         *list = (ll_node *)malloc(sizeof(ll_node));
+        if (list == NULL)
+        {
+            return;
+        }
         ll_node *local_list = *list;
         local_list->next = NULL;
         local_list->val = val;
@@ -16,13 +20,16 @@ void append_linked_list(ll_node **list, unsigned int val)
         local_list = local_list->next;
     }
     local_list->next = (ll_node *)malloc(sizeof(ll_node));
+    if (local_list->next == NULL)
+    {
+        return;
+    }
     local_list = local_list->next;
     local_list->next = NULL;
     local_list->val = val;
-    return;
 }
 
-int is_in_linked_list(ll_node *list, unsigned int val)
+int is_in_linked_list(const ll_node *list, unsigned int val)
 {
     if (list == NULL)
     {
@@ -53,13 +60,13 @@ void free_linked_list(ll_node **list)
     }
 }
 
-void print_linked_list(ll_node *list)
+void print_linked_list(const ll_node *list)
 {
     ll_node *tracker = list;
     while (tracker != NULL)
     {
         printf("%d ", tracker->val);
-        printf("\n");
         tracker = tracker->next;
     }
+    printf("\n");
 }
