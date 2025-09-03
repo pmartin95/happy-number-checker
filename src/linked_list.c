@@ -5,7 +5,7 @@ void append_linked_list(ll_node **list, unsigned int val)
     if (*list == NULL)
     {
         *list = (ll_node *)malloc(sizeof(ll_node));
-        if (list == NULL)
+        if (*list == NULL)
         {
             return;
         }
