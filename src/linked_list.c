@@ -35,7 +35,7 @@ int is_in_linked_list(const ll_node *list, unsigned int val)
     {
         return 0;
     }
-    ll_node *tracker = list;
+    const ll_node *tracker = list;
 
     while (tracker != NULL)
     {
@@ -62,7 +62,7 @@ void free_linked_list(ll_node **list)
 
 void print_linked_list(const ll_node *list)
 {
-    ll_node *tracker = list;
+    const ll_node *tracker = list;
     while (tracker != NULL)
     {
         printf("%d ", tracker->val);
