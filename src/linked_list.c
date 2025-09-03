@@ -58,6 +58,7 @@ void free_linked_list(ll_node **list)
         tracker = tracker->next;
         free(prev);
     }
+    *list = NULL;
 }
 
 void print_linked_list(const ll_node *list)
